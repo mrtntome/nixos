@@ -72,6 +72,7 @@
       "pcie_brcmstb"      # required for the pcie bus to work
       "reset-raspberrypi" # required for vl805 firmware to load
     ];
+  };
 
   hardware.deviceTree.filter = lib.mkDefault "bcm2711-rpi-*.dtb";
 
