@@ -1,6 +1,6 @@
 { config, nixpkgs, lib, ... }:
 
-{
+rec {
   imports = [ ];
 
   pkgs = import nixpkgs {
