@@ -3,6 +3,11 @@
 {
   imports = [ ];
 
+  pkgs = import nixpkgs {
+    system = "aarch64-linux";
+    config.allowUnfree = true;
+  };
+
   users.users.pod-runner = {
     isNormalUser = true;
     description = "martin";
@@ -87,4 +92,5 @@
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 
   system.stateVersion = "23.05";
+
 }

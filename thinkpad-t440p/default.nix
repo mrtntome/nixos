@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, nixpkgs, ... }:
 
 {
   imports =
@@ -17,6 +17,11 @@
       ./login-manager
       ./window-manager
     ];
+
+  pkgs = import nixpkgs {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
 
   users.users.martin = {
     isNormalUser = true;
