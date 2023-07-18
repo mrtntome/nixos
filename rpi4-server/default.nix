@@ -80,6 +80,9 @@
   # Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 
